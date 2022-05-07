@@ -12,6 +12,10 @@
 #include <ctype.h>
 #include <stdbool.h>
 
+/*
+* @param user input = year
+* @return boolean is leap year or not
+**/
 bool isLeapYear(int year)
 {
     bool checker = false;
@@ -36,17 +40,27 @@ bool isLeapYear(int year)
 }//end of isLeapYear
 
 
-int getDayOfYear(intUserMonth){
+/*
+* @param user input. integer month and day
+* @return calculated total of current days in the year
+**/
+int getDayOfYear(intUserMonth, intUserDay){
     //array of all days of months
     int days_per_month[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
     int intReturn = 0;
+    // because of array index
+    intUserMonth = intUserMonth-1;
 
-    for(int i = 0; i<intUserMonth; i++){
-        intReturn = intReturn + days_per_month[i];
-    }//end of for
+    if(intUserMonth == 0){
+        return intReturn+=intUserDay;
+    }else{
+        for(int i = 0; i<intUserMonth; i++){
+            intReturn = intReturn + days_per_month[i];
+        }
+        return intReturn+=intUserDay;
+    }//end of if-else
 
-    return intReturn;
-}
+}//end of getDayOfYear()
 
 int main()
 {
@@ -77,18 +91,14 @@ int main()
         printf("Geben Sie den Tag ein: ");
         scanf("%i", &intUserDay );
 
-        intDayOfYear = getDayOfYear(intMonthOfYear);
-
-        //calculation FALSE
-        intDayOfYear-=intUserDay;
-        printf("\n intDayOfYear = %i\n", intDayOfYear);
+        intDayOfYear = getDayOfYear(intMonthOfYear, intUserDay);
 
         if( isLeapYear(intYear) ){
             intDayOfYear+=intLeapYearAdd;
             //printf("Jahr ist Schaltjahr\n");
         }
 
-        printf("Heute ist der %i. Tag des Jahres.\n", intDayOfYear);
+        printf("\nHeute ist der %i. Tag des Jahres.\n\n", intDayOfYear);
 
     }//end of while
     return 0;
