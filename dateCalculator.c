@@ -42,11 +42,10 @@ int is_leapyear(int year)
 }//end of isLeapYear
 
 
-/* TODO: why is there an error ?? 
-* @param int day, month, year
+/* @param int day, month, year
 * @return int number 1-31 OR -1 if date is invalid 
 **/
-int exists_date(day, month, year)
+int exists_date(int day, int month, int year)
 {
     // date is invalid if below 1.1.1582 or after 31.12.2400
     if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1582 || year > 2400){
@@ -63,7 +62,7 @@ int exists_date(day, month, year)
 * @param int day, month, year 
 * @return total number of days or if date is invalid return -1 
 **/
-int day_of_the_year(day, month, year)
+int day_of_the_year(int day, int month, int year)
 {
 
     // check date | if invalid return -1
@@ -97,3 +96,25 @@ int day_of_the_year(day, month, year)
 }//end of day_of_the_year()
 
 
+/* @param int month, year 
+* @return int get days of a month 
+**/
+
+int get_days_for_month(int month, int year)
+{
+
+    //array of all days of months | redundant!
+    int days_per_month[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+    int intReturn = 0;
+
+    // because of array index
+    month = month-1;
+
+    // if is leap year add 1 fis_leapyear
+    if (is_leapyear(year) == 1){
+        days_per_month[1]+=1;
+    }
+
+    return days_per_month[month];
+
+}//end of get_days_for_month()

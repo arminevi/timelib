@@ -12,13 +12,14 @@
 #include <ctype.h>
 #include <stdbool.h>
 
-//#include "dateCalculator.h"
+#include "dateCalculator.h"
 /* TODO: 
 *  - include header file and c file for calculator 
 *  - include structs 
 *  - add to github 
 
     [*] => 1 Commit noch nicht gepusht: "Added header file"
+    [*] => 2 Commits noch nicht gepusht: "Added dateCalculator.c"
 */
 
 
@@ -27,6 +28,7 @@
 * @param int year
 * @return 1 if leap year, 0 if no leap year, -1 if year is invalid
 **/
+/*
 int is_leapyear(int year)
 {
     int isLeapYear = 1;
@@ -59,12 +61,15 @@ int is_leapyear(int year)
 
     return checker;
 }//end of isLeapYear
+*/
 
 /*
 * @param int day, month, year
 * @return int number 1-31 OR -1 if date is invalid 
 **/
-int exists_date(day, month, year){
+/*
+int exists_date(day, month, year)
+{
     // date is invalid if below 1.1.1582 or after 31.12.2400
     if (day < 1 || day > 31 || month < 1 || month > 12 || year < 1582 || year > 2400){
         return 0;
@@ -73,13 +78,16 @@ int exists_date(day, month, year){
         return 1;
     }
     
-}
+}//end of exists date 
+*/
 
 /* get total numbers of days
 * @param int day, month, year 
 * @return total number of days or if date is invalid return -1 
 **/
-int day_of_the_year(day, month, year){
+/*
+int day_of_the_year(day, month, year)
+{
 
     // check date | if invalid return -1
     if (exists_date(day, month, year) == 0)
@@ -110,6 +118,7 @@ int day_of_the_year(day, month, year){
     }//end of if-else
 
 }//end of day_of_the_year()
+*/
 
 
 
@@ -117,7 +126,9 @@ int day_of_the_year(day, month, year){
 * @param int month, year 
 * @return int get days of a month 
 **/
-int get_days_for_month(month, year){
+/*
+int get_days_for_month(month, year)
+{
 
     //array of all days of months | redundant!
     int days_per_month[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
@@ -134,7 +145,7 @@ int get_days_for_month(month, year){
     return days_per_month[month];
 
 }//end of get_days_for_month()
-
+*/
 
 
 int main()
