@@ -17,6 +17,8 @@
 *  - include header file and c file for calculator 
 *  - include structs 
 *  - add to github 
+
+    [*] => 1 Commit noch nicht gepusht: "Added header file"
 */
 
 
