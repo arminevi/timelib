@@ -12,6 +12,14 @@
 #include <ctype.h>
 #include <stdbool.h>
 
+//#include "dateCalculator.h"
+/* TODO: 
+*  - include header file and c file for calculator 
+*  - include structs 
+*  - add to github 
+*/
+
+
 
 /* check if leap year
 * @param int year
