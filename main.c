@@ -20,6 +20,7 @@
 
     [*] => 1 Commit noch nicht gepusht: "Added header file"
     [*] => 2 Commits noch nicht gepusht: "Added dateCalculator.c"
+    [*] => 3 Commits noch nicht gepusht: "Fixed error dateCalculator.c"
 */
 
 
